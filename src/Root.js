@@ -34,7 +34,7 @@ function Root() {
         <Input type="password" placeholder="password" />
         <br />
         <br />
-        <Input placeholder="Keyword Here" After={InputAfter} />
+        <Input placeholder="Keyword Here" after={InputAfter} />
         <br />
         <br />
         <Input placeholder="Change Event" onChange={handleChange} />

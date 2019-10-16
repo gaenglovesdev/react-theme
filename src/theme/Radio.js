@@ -2,22 +2,16 @@ import React from 'react';
 import styled from 'styled-components';
 import palette from './palette';
 
-export const radio = (props) => {
-    const {
-        label,
-        disabled,
-        onChange,
-        name
-    } = props;
+export const Radio = ({label,...props}) => {
     
-    if(!name){
+    if(!props.name){
         throw new Error(`The required attribute 'name' is missing😡`)
     }
 
     return (
         <RadioWrap className="radio-item">
-            <input type="radio" name={name} onChange={onChange} disabled={disabled}/>
-            <Radio/>
+            <input type="radio" {...props}/>
+            <RadioStyle/>
             {
                 label
                 ?
@@ -28,20 +22,17 @@ export const radio = (props) => {
         </RadioWrap>
     )
 }
-export const radioGroup = (props) => {
-    const {
-        children
-    } = props;
+export const RadioGroup = ({children,...props}) => {
     return (
-        <RadioGroup>
+        <RadioOuterWrap>
             {
                 children
             }
-        </RadioGroup>
+        </RadioOuterWrap>
     )
 }
 
-const RadioGroup = styled.div`
+const RadioOuterWrap = styled.div`
     display:flex;
     .radio-item{
         margin-right:5px;
@@ -78,7 +69,7 @@ const RadioWrap = styled.label`
         }
     }
 `
-const Radio = styled.div`
+const RadioStyle = styled.div`
     position:relative;
     display:flex;
     justify-content:center;

@@ -2,18 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import palette from './palette';
 
-export default (props) => {
-    const {
-        onChange,
-        label,
-        checked,
-        disabled,
-        id
-    } = props;
+const Checkbox = ({label,...props}) => {
     return (
-        <CheckboxWrap disabled={disabled}>
-            <input type="checkbox" onChange={onChange} checked={checked} disabled={disabled} id={id}/>
-            <Checkbox/>
+        <CheckboxWrap disabled={props.disabled}>
+            <input type="checkbox" {...props}/>
+            <CheckboxStyle/>
             {
                 label
                 ?
@@ -63,7 +56,7 @@ const CheckboxWrap = styled.label`
         }
     }
 `
-const Checkbox = styled.div`
+const CheckboxStyle = styled.div`
     vertical-align:middle;
     position:relative;
     display:inline-flex;
@@ -82,3 +75,5 @@ const Checkbox = styled.div`
 const LabelText = styled.span`
     font-size:13px;
 `
+
+export default Checkbox;

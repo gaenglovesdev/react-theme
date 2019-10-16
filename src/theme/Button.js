@@ -1,15 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import palette from './palette';
-export default (props) => {
-    const {
-        type,
-        prefix,
-        suffix,
-        children,
-        disabled,
-        onClick
-    } = props;
+const Button = ({type,prefix,suffix,children,...props}) => {
     const Prefix = prefix;
     const Suffix = suffix;
     const buttonTypes = type => {
@@ -25,7 +17,7 @@ export default (props) => {
         }
     }
     return(
-        <ButtonStyle onClick={onClick} disabled={disabled} type="button" className={type ? type : ""}>
+        <ButtonStyle type="button" className={type ? type : ""} {...props}>
             {
                 prefix
                 ?
@@ -115,3 +107,5 @@ const ButtonStyle = styled.button`
         }
     }
 `;
+
+export default Button;

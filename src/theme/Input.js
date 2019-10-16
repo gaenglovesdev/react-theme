@@ -1,29 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 
-export default (props) => {
-    const {
-        Before,
-        After,
-        type,
-        placeholder,
-        label,
-        readonly,
-        disabled,
-        onChange,
-        onBlur,
-        onFocus
-    } = props;
-
+const Input = ({before,after,type,...props}) => {
+    const Before = before;
+    const After = after;
     const InputInner = () => (
         <InputStyle
             type={type ? type : 'text'}
-            placeholder={placeholder}
-            readOnly={readonly}
-            disabled={disabled}
-            onChange={onChange}
-            onBlur={onBlur}
-            onFocus={onFocus}
+            {...props}
         />
     )
     
@@ -97,3 +81,5 @@ const InputStyle = styled.input`
         cursor:not-allowed;
     }
 `
+
+export default Input;
