@@ -1,19 +1,20 @@
-import React from 'react';
-import styled from 'styled-components';
-import './reset.css';
-import { Input,Button,Checkbox,Radio, RadioGroup } from './theme/';
+import React from "react";
+import styled from "styled-components";
+import "./reset.css";
+import { Input, Button, Checkbox, Radio, RadioGroup } from "./theme/";
 function Root() {
-  const buttonPrefix = () => <span>🚫</span>;
+  const buttonPrefix = () => <span role="img">🚫</span>;
   const handleClick = ({ target }) => {
     console.log(target);
   };
   const handleChange = ({ target }) => {
     console.log(target.value);
   };
+
   const InputAfter = () => <Button type="primary">Search</Button>;
   return (
-    <div className="Root" style={{padding:'50px'}}>
-       <Section>
+    <div className="Root" style={{ padding: "50px" }}>
+      <Section>
         <Title>Button</Title>
         <Button>Default</Button>
         <Button type="danger">danger</Button>
@@ -73,6 +74,5 @@ const Title = styled.h2`
   font-size: 20px;
   margin-bottom: 20px;
 `;
-
 
 export default Root;
