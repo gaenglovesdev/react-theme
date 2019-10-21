@@ -18,6 +18,7 @@
         - .stylelintrc.json
         - setting.json(ctrl+,)
     - [x] husky
+    
 👉[Open in Browser](https://gaengloves-react-theme.netlify.com/)
 
 *Thanks to Webchemist*
