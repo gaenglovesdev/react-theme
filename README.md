@@ -7,7 +7,7 @@
     - [x] Checkbox
     - [x] Radio
     - [x] Input
-		- [] Select
+    - [] Select
 - 👉 ESLINT 설정
     - [x] vscode 확장프로그램
         - eslint
