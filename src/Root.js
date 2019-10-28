@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import "./reset.css";
-import { Input, Button, Checkbox, Radio, RadioGroup } from "./theme/";
+import { Input, Button, Checkbox, Radio, RadioGroup, Select, Option } from "./theme/";
 function Root() {
   const buttonPrefix = () => <span role="img">🚫</span>;
   const handleClick = ({ target }) => {
@@ -62,6 +62,17 @@ function Root() {
           <Radio label="B" name="test2" />
           <Radio label="C" name="test2" />
         </RadioGroup>
+      </Section>
+      <Section>
+        <Title>Select</Title>
+        <Select placeholder="선택하세요">
+          <Select.Option value="ko">한국</Select.Option>
+          <Select.Option value="us">미국</Select.Option>
+          <Select.Option disabled value="jp">
+            일본
+          </Select.Option>
+          <Select.Option value="other">그 외</Select.Option>
+        </Select>
       </Section>
     </div>
   );
